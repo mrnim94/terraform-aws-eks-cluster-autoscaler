@@ -21,7 +21,7 @@ data "terraform_remote_state" "eks" {
 
 module "eks-cluster-autoscaler" {
   source  = "mrnim94/eks-cluster-autoscaler/aws"
-  version = "0.0.4"
+  version = "1.0.0"
 
   aws_region = var.aws_region
   environment = "dev"
@@ -58,7 +58,7 @@ data "aws_eks_cluster" "eks_k8s" {
 
 module "eks-cluster-autoscaler" {
   source  = "mrnim94/eks-cluster-autoscaler/aws"
-  version = "0.0.5"
+  version = "1.0.0"
 
   aws_region = var.aws_region
   environment = "dev"
