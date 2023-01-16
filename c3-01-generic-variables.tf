@@ -35,3 +35,9 @@ variable "eks_cluster_endpoint" {
   type = string
   default = ""
 }
+
+variable "eks_cluster_certificate_authority_data" {
+  description = "PEM-encoded root certificates bundle for TLS authentication./data.terraform_remote_state.eks.outputs.cluster_certificate_authority_data"
+  type = string
+  default = ""
+}
