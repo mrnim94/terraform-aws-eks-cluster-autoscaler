@@ -17,3 +17,21 @@ variable "business_divsion" {
   type = string
   default = "SAP"
 }
+
+variable "eks_cluster_id" {
+  description = "Full EKS cluster name -- ID/data.terraform_remote_state.eks.outputs.cluster_id"
+  type = string
+  default = ""
+}
+
+variable "aws_iam_openid_connect_provider_arn" {
+  description = "The ARN assigned by AWS for this provider/data.terraform_remote_state.eks.outputs.aws_iam_openid_connect_provider_arn"
+  type = string
+  default = ""
+}
+
+variable "eks_cluster_endpoint" {
+  description = "The hostname (in form of URI) of Kubernetes master/data.terraform_remote_state.eks.outputs.cluster_endpoint"
+  type = string
+  default = ""
+}

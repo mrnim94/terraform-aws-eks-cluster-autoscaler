@@ -42,11 +42,11 @@ resource "aws_iam_role" "cluster_autoscaler_iam_role" {
         Effect = "Allow"
         Sid    = ""
         Principal = {
-          Federated = "${data.terraform_remote_state.eks.outputs.aws_iam_openid_connect_provider_arn}"
+          Federated = "${var.aws_iam_openid_connect_provider_arn}"
         }
         Condition = {
           StringEquals = {
-            "${data.terraform_remote_state.eks.outputs.aws_iam_openid_connect_provider_extract_from_arn}:sub": "system:serviceaccount:kube-system:cluster-autoscaler"
+            "${local.aws_iam_openid_connect_provider_extract_from_arn}:sub": "system:serviceaccount:kube-system:efs-csi-controller-sa"
           }
         }        
       },
