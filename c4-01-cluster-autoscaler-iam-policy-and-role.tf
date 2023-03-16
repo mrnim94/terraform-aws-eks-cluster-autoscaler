@@ -46,7 +46,7 @@ resource "aws_iam_role" "cluster_autoscaler_iam_role" {
         }
         Condition = {
           StringEquals = {
-            "${local.aws_iam_openid_connect_provider_extract_from_arn}:sub": "system:serviceaccount:kube-system:efs-csi-controller-sa"
+            "${local.aws_iam_openid_connect_provider_extract_from_arn}:sub": "system:serviceaccount:kube-system:cluster-autoscaler"
           }
         }        
       },
