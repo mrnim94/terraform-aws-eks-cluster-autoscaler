@@ -43,7 +43,12 @@ resource "helm_release" "cluster_autoscaler_release" {
   #set {
   #  name = "extraArgs.scan-interval"
   #  value = "20s"
-  #}    
+  #}  
+
+  set {
+    name  = "nodeSelector.kubernetes\\.io/os"
+    value = "linux"
+  }  
    
 }
 
